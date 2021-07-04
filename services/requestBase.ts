@@ -5,7 +5,7 @@ export class Base {
     constructor() {
       this.axiosInstance = axios.create({
         baseURL: Base.baseUrl,
-        timeout: 1000,
+        timeout: 20000,
         headers: {
           'x-functions-key': 'cYWOrJhggJO8/CHx52TfmD8AH5RdGEjSIBjHhuiHb5qnFV0jzDyngQ=='
         }

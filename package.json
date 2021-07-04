@@ -5,24 +5,35 @@
   "author": "Arjun Jhawar <arjun.jhawar@gmail.com>",
   "scripts": {
     "build": "yarn rimraf typescript && tsc",
+    "lint": "yarn eslint --max-warnings 0 . --ext .ts,.tsx",
+    "pretty": "yarn eslint . --fix --ext .js,.jsx,.ts,.tsx",
     "test": "yarn build && protractor typescript/conf/conf.js --verbose",
+    "test:api": "yarn build && mocha --config mocharc.yaml ${TEST_LOCATION:-tests/api}",
     "webdriver-clean": "webdriver-manager clean",
     "webdriver-update": "webdriver-manager update",
     "webdriver-start": "webdriver-manager start --standalone"
   },
   "dependencies": {
+    "@types/axios": "^0.14.0",
+    "@types/lodash": "^4.14.170",
+    "@typescript-eslint/eslint-plugin": "^4.28.1",
+    "@typescript-eslint/parser": "^4.28.1",
+    "axios": "^0.21.1",
+    "babel-eslint": "^10.1.0",
     "chai": "^4.3.4",
     "chromedriver": "^90.0.0",
+    "eslint": "^7.30.0",
+    "lodash": "^4.17.21",
     "mocha": "^8.3.2",
     "mochawesome": "^6.2.2",
     "protractor": "^7.0.0",
     "rimraf": "^3.0.2",
-    "selenium-webdriver": "^4.0.0-beta.3",
     "ts-node": "^9.1.1",
     "typescript": "^4.2.4"
   },
   "devDependencies": {
     "@types/chai": "^4.2.17",
+    "@types/eslint": "^7.2.13",
     "@types/mocha": "^8.2.2"
   }
 }

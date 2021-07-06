@@ -1,7 +1,6 @@
 import { expect } from 'chai';
 import { browser, ElementFinder } from 'protractor';
 import { Calculator } from '../../pageObjects/calculator';
-import { Calculation } from '../../services/calculation';
 
 describe('Addition', function () {
   let calculator: Calculator;

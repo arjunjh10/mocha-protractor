@@ -7,7 +7,7 @@
     "build": "yarn rimraf typescript && tsc",
     "lint": "yarn eslint --max-warnings 0 . --ext .ts,.tsx",
     "pretty": "yarn eslint . --fix --ext .js,.jsx,.ts,.tsx",
-    "test": "yarn build && protractor typescript/conf/conf.js --verbose",
+    "test": "rimraf mochawesome-report/ && yarn build && protractor typescript/conf/conf.js --verbose",
     "test:api": "yarn build && mocha --config mocharc.yaml ${TEST_LOCATION:-tests/api}",
     "webdriver-clean": "webdriver-manager clean",
     "webdriver-update": "webdriver-manager update",
@@ -23,7 +23,9 @@
     "chai": "^4.3.4",
     "chromedriver": "^90.0.0",
     "eslint": "^7.30.0",
+    "fs-extra": "^10.0.0",
     "lodash": "^4.17.21",
+    "make-dir": "^3.1.0",
     "mocha": "^8.3.2",
     "mochawesome": "^6.2.2",
     "protractor": "^7.0.0",
@@ -34,6 +36,7 @@
   "devDependencies": {
     "@types/chai": "^4.2.17",
     "@types/eslint": "^7.2.13",
+    "@types/fs-extra": "^9.0.11",
     "@types/mocha": "^8.2.2"
   }
 }

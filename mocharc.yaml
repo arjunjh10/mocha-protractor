@@ -17,7 +17,6 @@ extension: [js, cjs, mjs, ts]
 timeout: 1000000
 retries: 0
 inline-diffs: true
-# watch-files:
-#   - 'lib/**/*.ts'
-#   - 'support/**/*.ts'
-#   - 'test/**/*.ts'
+watch-files:
+  - 'support/**/*.ts'
+  - 'test/**/*.ts'
